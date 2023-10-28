@@ -157,7 +157,7 @@
     </script>
     
     <script defer type="text/javascript" src="/js/custom.js"></script>
-    <title> | 贺子骏的博客 - 1195529182</title>
+    <title>pwn做题总结 | 贺子骏的博客 - 1195529182</title>
   <meta name="generator" content="Hexo 6.3.0"></head>
   <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN"  data-spy="scroll" data-target=".list-group">
     
@@ -208,11 +208,11 @@
       </span>
     </div>
     <header class="post-header">
-      <h1 class="post-title" itemprop="name headline"></h1>
+      <h1 class="post-title" itemprop="name headline">pwn做题总结</h1>
       <div class="post-meta">
         
         <span class="post-date">
-          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2023-10-28T15:46:56+08:00">2023-10-28 15:46:56</time></span>
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2023-10-28T15:59:10+08:00">2023-10-28 15:59:10</time></span>
         </span>
         
         
@@ -241,8 +241,25 @@
 <p>指令流的执行顺序通常是线性的，从程序的起始点开始，逐步按照指令的顺序执行，直至程序结束。每条指令可能是一条基本操作，也可能是跳转到其他部分的指令，从而在程序的执行过程中实现不同的控制流。</p>
 <p>在现代计算机体系结构中，指令流由处理器（CPU）执行。处理器从内存中读取指令，解码并执行它们，然后根据需要更新内存中的数据。指令流的执行速度取决于处理器的性能以及程序的复杂性。</p>
 <p>总之，指令流是计算机程序中一系列按照特定顺序执行的指令，用于实现特定任务或功能。它是计算机执行操作的基本单位之一。</p>
+
+<p>在学习ret2syscall中</p>
+<p>ROPgadget –binary rop –ropchain</p>
+<p>这个命令</p>
+<p>payload直接自动生成,仔细阅读一下自动生成的，发现就是都是利用片段拼接，而且只调用了一次int 0x80，调用的这次也是咱们那个只能用一次的int 0x80的那个地址。这种直接生成的payload一般都比较长，适用于gets函数，题是read，限制长度就不能用.</p>
+<p>这串代码是使用ROPgadget工具的命令行参数，用于执行ROP gadget的分析和ROP链的生成。</p>
+<p><code>--binary rop</code>：指定要分析的二进制文件的路径，这里的”rop”是二进制文件的名称。</p>
+<p><code>--ropchain</code>：指示ROPgadget生成ROP链。</p>
+<p>因此，该命令的含义是告诉ROPgadget工具分析名为”rop”的二进制文件，并生成相应的ROP链。具体来说，ROPgadget将扫描该二进制文件，识别其中的ROP gadget，并使用这些ROP gadget构建一个可以执行特定任务的ROP链，例如绕过内存保护机制或执行恶意操作。</p>
+<p>请注意，这只是一个命令行参数示例，实际上还可能需要其他参数和选项来定制分析和生成ROP链的行为。</p>
+
     </main>
     <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/" rel="tag"><i class="fas fa-tags"></i>网络安全</a>
+        
+      </div>
       
     </footer>
   </article>
@@ -256,7 +273,7 @@
     </div>
     <div class="page-nav-prev page-nav-item">
       
-      <a href="/2023/10/28/php%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="prev" title=""><span class="nav-title"></span><i class="fas fa-angle-right"></i></a>
+      <a href="/2023/10/28/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1%E7%BB%8F%E9%AA%8C/" rel="prev" title="数学建模经验"><span class="nav-title">数学建模经验</span><i class="fas fa-angle-right"></i></a>
       
     </div>
   </nav>
@@ -291,7 +308,7 @@
     
     <div class="archives-count count-block">
       <div class="site-count-title">归档</div>
-      <div><a href="/archives/">4</a></div>
+      <div><a href="/archives/">5</a></div>
     </div>
     
     
